@@ -1,0 +1,12 @@
+This directory contains audio files for the Graz Audio Guide.
+
+Expected audio files:
+- hauptplatz.mp3 - Main Square soundscape
+- schlossberg.mp3 - Schlossberg hill ambience
+- kunsthaus.mp3 - Art Museum acoustics
+- murinsel.mp3 - Mur Island water sounds
+- farmersmarket.mp3 - Kaiser-Josef-Platz market
+- stadtpark.mp3 - City Park nature sounds
+- university.mp3 - University campus ambience
+
+Please add your audio files to this directory. The files should be MP3 format, ideally 128-256kbps, stereo.

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graz Audio Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Graz Audio Guide</h1>
+            <p>Explore the sounds of Graz, Austria</p>
+        </header>
+
+        <div class="main-content">
+            <div id="map-container">
+                <!-- Map will be rendered here -->
+            </div>
+
+            <div class="audio-player">
+                <div class="now-playing">
+                    <h3>Now Playing</h3>
+                    <p id="location-title">Select a location on the map</p>
+                </div>
+                <!-- Hidden HTML5 audio element that we'll use for playback -->
+                <audio id="audio-element" style="display:none;"></audio>
+                <div class="controls">
+                    <button id="play-btn" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </button>
+                    <button id="pause-btn" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="6" y="4" width="4" height="16"></rect>
+                            <rect x="14" y="4" width="4" height="16"></rect>
+                        </svg>
+                    </button>
+                    <div class="volume-control">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                        </svg>
+                        <input type="range" id="volume" min="0" max="1" step="0.1" value="0.7">
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-info">
+                <h3>Location Details</h3>
+                <div id="location-info-content">
+                    <p>Select an audio hotspot on the map to learn more about the location and listen to its soundscape.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tours-section">
+            <h2>Featured Audio Tours</h2>
+            <div class="tour-cards">
+                <div class="tour-card" data-tour="historical">
+                    <div class="tour-icon">🏰</div>
+                    <div class="tour-content">
+                        <h3>Historical Graz</h3>
+                        <p>Experience the sounds of medieval architecture and historical landmarks.</p>
+                    </div>
+                </div>
+                <div class="tour-card" data-tour="cultural">
+                    <div class="tour-icon">🎭</div>
+                    <div class="tour-content">
+                        <h3>Cultural Hotspots</h3>
+                        <p>From opera house to street performers, immerse yourself in Graz's cultural sounds.</p>
+                    </div>
+                </div>
+                <div class="tour-card" data-tour="nature">
+                    <div class="tour-icon">🌿</div>
+                    <div class="tour-content">
+                        <h3>Green Spaces</h3>
+                        <p>Natural soundscapes in urban settings throughout the city.</p>
+                    </div>
+                </div>
+                <div class="tour-card" data-tour="culinary">
+                    <div class="tour-icon">🍽️</div>
+                    <div class="tour-content">
+                        <h3>Culinary Journey</h3>
+                        <p>The sounds of food markets, cafés, and local eateries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Best experienced with headphones</p>
+            <p>Developed in Graz, Austria</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
